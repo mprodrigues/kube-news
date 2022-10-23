@@ -51,8 +51,8 @@ spec:
         app: web
     spec:
        containers:
-         - name: wev
-           image: mprodrigues/kube-news:v1
+         - name: web
+           image: mprodrigues/kube-news:{{TAG}}
            ports:
            - containerPort: 8080
            env:
@@ -76,5 +76,4 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
-  type: NodePort
+  type: LoaBalancer
